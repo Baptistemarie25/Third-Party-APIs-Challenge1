@@ -25,7 +25,31 @@ const generateHours = () => {
         } else {
             hourTextEl.textContent= `${i - 3} PM`;
         }
+        
+        var eventEl = document.createElement('input');
+        eventEl.classList = 'col-8';
+        eventEl.setAttribute('id',`hourInput${i}`);
+        eventEl.value = taskInfoArray[i] || '';
+        var saveButtonEl = document.createElement('button');
+        saveButtonEl.classList = 'col-2 btn-primary';
+        saveButtonEl.textContent = 'save';
+        saveButtonEl.setAttribute('data-blockhour', i);
+        saveButtonEl.addEventListener('click', function(event) {
+            // stored button i clicked on as a variable
+            var clickedButtonEl = event.target;
+            // set my hourIndex variable to custom attribute that was created on save button 
+            var hourIndex = clickedButtonEl.getAttribute('data-blockHour');
+            // grab input element that corresponds to the save button that is clicked
+            var inputEl = document.getElementById(`hourInput${hourIndex}`);
+            //stored the text content of the input element to the taskInfoArray
+            taskInfoArray[hourIndex] = inputEl.value;
+            //called the store Events function to store the events in local storage
+            storeEvents();
+        })
 
+        hourBlockEl.appendChild(hourTextEl);
+        hourBlockEl.appendChild(eventEl);
+        hourBlockEl.appendChild(saveButtonEl);
     }
 }
 
