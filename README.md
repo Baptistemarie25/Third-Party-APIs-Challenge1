@@ -6,9 +6,9 @@ Work day Scheduler is a daily planner for employees to use to track their activi
 
 ## screenshot
 
-![screenshot] (/Users/mariebaptiste/Desktop/workday-scheduler/workday-scheduler-screenshot.png)
+![screenshot](/Users/mariebaptiste/Desktop/workday-scheduler/workday-scheduler-screenshot.png)
 
-![link-to-application] (https://baptistemarie25.github.io/Third-Party-APIs-Challenge1/)
+[link-to-application](https://baptistemarie25.github.io/Third-Party-APIs-Challenge1/)
 
 
 
