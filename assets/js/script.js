@@ -3,13 +3,19 @@ var currentDayEl = document.getElementById('currentDay');
 var taskInfoArray = JSON.parse(localStorage.getItem('calendarEvents'));
 if (!taskInfoArray) {
     taskInfoArray = []
-}
+};
 
 // display current date at the top 
 const setCurrentDay = () => {
     var todaysDate = moment().format('MMM Do, YYYY');
     currentDayEl.textContent = todaysDate;
 };
+
+//save task to local storage on button click 
+const storeEvents  = () => {
+    localStorage.setItem('calendarEvents', JSON.stringify(taskInfoArray))
+};
+
 
 // generate each element and add event listener to sec
 
@@ -54,5 +60,10 @@ const generateHours = () => {
         hourBlockEl.appendChild(eventEl);
         hourBlockEl.appendChild(saveButtonEl);
     }
-}
+};
 
+
+// apply bootstrap to change colors of the hours for past present future
+//
+setCurrentDay();
+generateHours();
