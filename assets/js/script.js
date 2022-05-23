@@ -1,6 +1,9 @@
 var calendarEl = document.getElementById('calendar');
 var currentDayEl = document.getElementById('currentDay');
-
+var taskInfoArray = JSON.parse(localStorage.getItem('calendarEvents'));
+if (!taskInfoArray) {
+    taskInfoArray = []
+}
 
 // display current date at the top 
 const setCurrentDay = () => {
